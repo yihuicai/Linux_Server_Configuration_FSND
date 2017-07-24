@@ -7,13 +7,13 @@
 This is a project of Udacity Full Stack Web Developer Nanodegree. It is the last puzzle part for the whole picture of my [*catalog*](https://github.com/yihuicai/Catalog_FSND) website so that you can experience what I actually created.
 
 - ​ <u>IP Address</u> : 52.25.48.0
--  <u>SSH Port</u> : 2200
+- <u>SSH Port</u> : 2200
 
--  <u>Complete URL</u> : http://ec2-52-25-48-0.us-west-2.compute.amazonaws.com
+- <u>Complete URL</u> : http://ec2-52-25-48-0.us-west-2.compute.amazonaws.com
 
--  <u>SSH Key</u> : `~/grader.pub`
+- <u>SSH Key</u> : `~/grader.pub`
 
--  <u>Programs Installed</u> : `git, sqlalchemy, postgresql, mod_wsgi, apache2, etc.`
+- <u>Programs Installed</u> : `git, sqlalchemy, postgresql, mod_wsgi, apache2, etc.`
 
 
 
@@ -38,13 +38,13 @@ This is a project of Udacity Full Stack Web Developer Nanodegree. It is the last
     	RewriteCond %{HTTP_HOST} ^52\.25\.48\.0$
     	RewriteRule ^/(.*)$ http://ec2-52-25-48-0.us-west-2.compute.amazonaws.com/$$
     	<Directory /var/www/fullstack/Alan/>
-        	Order allow, deny
-        	Allow from all
+    		Order allow, deny
+    		Allow from all
     	</Directory>
     	Alias /static /var/www/fullstack/Alan/static
     	<Directory /var/www/fullstack/Alan/static/>
-        	Order allow, deny
-        	Allow from all
+    		Order allow, deny
+    		Allow from all
     	</Directory>
     	ErrorLog ${APACHE_LOG_DIR}/error.log
     	LogLevel warn
@@ -52,7 +52,7 @@ This is a project of Udacity Full Stack Web Developer Nanodegree. It is the last
     </VirtualHost>
     WSGISocketPrefix /var/run/wsgi
 
-​	
+    ​
 
 7. Add the wsgi configuration file `/var/www/fullstack/myApp.wsgi`.
 
@@ -64,9 +64,7 @@ This is a project of Udacity Full Stack Web Developer Nanodegree. It is the last
 ```
 
 8. Install and configure PostgreSQL:  Not allowing remote connections by adding a password
-
- Create a new user named **alan** that has limited access to catalog application database.
-
-9. Modify the database address for connection in `application.py` and `database_setup.py` .
-10. Modify the SQLAlchemy database session management in `application.py`.
+9. Create a new user named **alan** that has limited access to catalog application database.
+10. Modify the database address for connection in `application.py` and `database_setup.py` .
+11. Modify the SQLAlchemy database session management in `application.py`.
 
