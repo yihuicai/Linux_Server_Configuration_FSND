@@ -31,28 +31,26 @@ This is a project of Udacity Full Stack Web Developer Nanodegree. It is the last
 
 6. Add the Apache2 configuration file `alan.conf`.
 
-    <VirtualHost *:80>
-    	ServerName 52.25.48.0
-    	WSGIScriptAlias / /var/www/fullstack/myApp.wsgi
-    	RewriteEngine On
-    	RewriteCond %{HTTP_HOST} ^52\.25\.48\.0$
-    	RewriteRule ^/(.*)$ http://ec2-52-25-48-0.us-west-2.compute.amazonaws.com/$$
-    	<Directory /var/www/fullstack/Alan/>
-    		Order allow, deny
-    		Allow from all
-    	</Directory>
-    	Alias /static /var/www/fullstack/Alan/static
-    	<Directory /var/www/fullstack/Alan/static/>
-    		Order allow, deny
-    		Allow from all
-    	</Directory>
-    	ErrorLog ${APACHE_LOG_DIR}/error.log
-    	LogLevel warn
-    	CustomLog ${APACHE_LOG_DIR}/accessFGL.log combined
-    </VirtualHost>
-    WSGISocketPrefix /var/run/wsgi
-
-    ​
+    	<VirtualHost *:80>
+    		ServerName 52.25.48.0
+    		WSGIScriptAlias / /var/www/fullstack/myApp.wsgi
+    		RewriteEngine On
+    		RewriteCond %{HTTP_HOST} ^52\.25\.48\.0$
+    		RewriteRule ^/(.*)$ http://ec2-52-25-48-0.us-west-2.compute.amazonaws.com/$$
+    		<Directory /var/www/fullstack/Alan/>
+    			Order allow, deny
+    			Allow from all
+    		</Directory>
+    		Alias /static /var/www/fullstack/Alan/static
+    		<Directory /var/www/fullstack/Alan/static/>
+    			Order allow, deny
+    			Allow from all
+    		</Directory>
+    		ErrorLog ${APACHE_LOG_DIR}/error.log
+    		LogLevel warn
+    		CustomLog ${APACHE_LOG_DIR}/accessFGL.log combined
+    	</VirtualHost>
+    	WSGISocketPrefix /var/run/wsgi
 
 7. Add the wsgi configuration file `/var/www/fullstack/myApp.wsgi`.
 
